@@ -45,6 +45,7 @@ int main(void) {
   switch (tam & 1) {
   case 1:
     med = arr[(tam - 1) >> 1];
+    break;
   default:
     med = (arr[tam >> 1] + arr[(tam >> 1) - 1]) >> 1;
   }
