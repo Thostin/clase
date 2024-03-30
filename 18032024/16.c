@@ -4,13 +4,14 @@ void min_max(long *src, size_t tam, long band);
 
 int main(int argc, char *argv[]) {
   printf("Introduzca el tamaño del vector: ");
-  size_t tam;
+  long _tam;
 
-  if (!scanf(" %zu", &tam) || 0 == tam) {
+  if (!scanf(" %zu", &_tam) || _tam <= 0) {
     printf("Improper input\n");
     return 1;
   }
 
+  size_t tam = _tam;
   long vec[tam];
 
   printf("A continuación, introduzca los elementos del vector:\n");
@@ -35,11 +36,11 @@ int main(int argc, char *argv[]) {
 
 void min_max(long *src, size_t tam, long band) {
   char existe = 0;
-  long val = -1 >> 1;
+  long val = 9223372036854775807;
 
   for (size_t i = 0; i < tam; ++i) {
-    if (src[i] > band && src[i] < val)
-      val = src[i], existe = 1;
+    if ((src[i] > band && src[i] <= val))
+      (val = src[i]), existe = 1;
   }
 
   switch (existe) {
