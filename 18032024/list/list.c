@@ -28,7 +28,7 @@ typedef int err_t;
 
 // Toma como parámetro una dirección de memoria de donde se
 // guardará el puntero al inicio de la lista
-err_t initl(listptr_t *root, const void *init_data, const size_t size) {
+err_t initl(listptr_t *const root, const void *init_data, const size_t size) {
   *root = (listptr_t)malloc(sizeof(list_t));
   if (nullptr == root)
     goto err0;
@@ -126,6 +126,7 @@ err_t findl(listptr_t node, const void *target, const size_t size,
 // Same as findl, but requires a comparision function
 // Will not segfault unless a non-nullptr non-malloc/calloc/realloc-allocated
 // pointer occurs
+// '0' return value will be threated as 'equal'
 err_t ffindl(listptr_t node, const void *target, listptr_t *const ret,
              int (*cmp)(const void *, const void *)) {
 
@@ -149,5 +150,30 @@ err_t compactl(listptr_t node, void *dst, const size_t size) {
     node = node->next;
     dst = (char *)dst + size;
   }
+  return EXIT_SUCCESS;
+}
+
+// Initialize a list from an array
+// requires mem to root and final nodes respectuvely
+// I'm not sure if I have to check pushl return values, maybe yes
+// If final node is nullptr, it will not give error, just ignore it
+err_t initarrl(listptr_t *const root, listptr_t *const final_node,
+               void *init_data, size_t nmemb, const size_t size) {
+
+  if (initl(root, init_data, size))
+    return EXIT_FAILURE;
+
+  listptr_t node = *root;
+  while (--nmemb) {
+    if (pushl(node, (init_data = (char *)init_data + size), size)) {
+      freel(root);
+      return EXIT_FAILURE;
+    }
+    node = node->next;
+  }
+
+  if (final_node)
+    *final_node = node;
+
   return EXIT_SUCCESS;
 }
