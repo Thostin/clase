@@ -15,3 +15,6 @@ err_t ffindl(listptr_t node, const void *target, listptr_t *const ret,
 
 // Array interaction
 err_t compactl(listptr_t node, void *dst, const size_t size);
+err_t initarrl(listptr_t *const root, listptr_t *const final_node,
+               void *init_data, size_t nmemb, const size_t size);
+err_t nrpushl(listptr_t *const node, const void *data, const size_t size);

@@ -1,3 +1,4 @@
+#include "../defs/defs.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -10,27 +11,13 @@ struct list_t {
   void *data;
 };
 
-#ifndef err_t
-typedef int err_t;
-#endif
-
-#ifndef EXIT_FAILURE
-#define EXIT_FAILURE 1
-#endif /* ifndef MACRO*/
-
-#ifndef EXIT_SUCCESS
-#define EXIT_SUCCESS 0
-#endif /* ifndef EXIT_SUCCESS */
-
-#ifndef nullptr
-#define nullptr 0x0
-#endif /* ifndef nullptr */
-
 // Toma como parámetro una dirección de memoria de donde se
 // guardará el puntero al inicio de la lista
 err_t initl(listptr_t *const root, const void *init_data, const size_t size) {
-  *root = (listptr_t)malloc(sizeof(list_t));
   if (nullptr == root)
+    return EXIT_FAILURE;
+  *root = (listptr_t)malloc(sizeof(list_t));
+  if (nullptr == *root)
     goto err0;
 
   (*root)->data = malloc(size);
@@ -75,6 +62,29 @@ err1:
   free(aux);
 err0:
   return EXIT_FAILURE;
+}
+
+// Chequeará la lista desde *node, si el elemento ya estaba, no genera un nuevo
+// nodo no_repeat_push_list(...)
+err_t nrpushl(listptr_t *const _node, const void *data, const size_t size) {
+  if (nullptr == _node || nullptr == data || 0 == size)
+    return EXIT_FAILURE_IMPROPER_USE;
+
+  if (nullptr == *_node)
+    initl(_node, data, size);
+
+  listptr_t node = *_node;
+  while (1) {
+    if (nullptr == node->data)
+      return EXIT_FAILURE_IMPROPER_USE;
+    if (!__builtin_memcmp(data, node->data, size))
+      return EXIT_SUCCESS_REPEATED;
+    if (nullptr == node->next) {
+      pushl(node, data, size);
+      return EXIT_SUCCESS;
+    }
+    node = node->next;
+  }
 }
 
 // Liberar una lista desde *node
