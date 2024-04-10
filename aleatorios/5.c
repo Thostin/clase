@@ -9,19 +9,20 @@ typedef int type;
 int cmp(const void *a, const void *b) { return (*(type *)a - *(type *)b); }
 
 int main(void) {
+  // srand(time(NULL));      /**********************************/
   type arr[CANT];
-  int lim;
+  int lim = 5000000;
 
+  /*printf("Introduzca el límite del cálculo: ");
   if (!scanf(" %d", &lim) || lim <= 0) {
     printf("Improper input\n");
     return 1;
-  }
+  }*/
 
   int gen, poker, foul, escalera;
   gen = poker = foul = escalera = 0;
   int cont;
 
-  srand(time(NULL));
   for (int i = 0; i < lim; ++i) {
     for (int j = 0; j < 5; ++j) {
       arr[j] = rand() % 6;
@@ -31,19 +32,19 @@ int main(void) {
         arr[3] == arr[4]) {
       ++gen;
     } else {
-      printf("NO GENERALA\n");
-      printf("a");
+      // printf("NO GENERALA\n");
+      // printf("a");
 
       if ((arr[0] == arr[1] && arr[1] == arr[2] && arr[2] == arr[3]) ||
           (arr[1] == arr[2] && arr[2] == arr[3] && arr[3] == arr[4])) {
         ++poker;
       } else {
-        printf("NO POKER\n");
+        // printf("NO POKER\n");
         if ((arr[0] == arr[1] && arr[1] == arr[2] && arr[3] == arr[4]) ||
             (arr[0] == arr[1] && arr[2] == arr[3] && arr[3] == arr[4])) {
           ++foul;
         } else {
-          printf("NO FAUL\n");
+          // printf("NO FAUL\n");
           cont = 0;
           for (int aux = 0; aux < CANT - 1; ++aux) {
             if (arr[aux] + 1 != arr[aux + 1]) {
@@ -57,7 +58,7 @@ int main(void) {
         }
       }
     }
-    putchar(10);
+    // putchar(10);
   }
 
   printf("GENERALA: %d\n", gen);
