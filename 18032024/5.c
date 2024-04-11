@@ -1,3 +1,8 @@
+/*
+ * Escriba un algoritmo que permita
+ * encontrar el maximo elemento del vector
+ * */
+
 #include <stdio.h>
 
 int max(int *, int size);
