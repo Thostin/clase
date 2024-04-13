@@ -1,3 +1,7 @@
+/*
+ * Esta ya te la sabés
+ * */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -6,13 +10,9 @@
 
 typedef int type;
 
-int cmp(const void *a, const void *b) { return (*(type *)a - *(type *)b); }
-
 int main(void) {
+  int primos[] = {1, 2, 3, 5, 7, 11};
   type arr[CANT];
-
-  int gen, poker, foul, escalera;
-  int cont;
 
   char *nom;
   int aux_cantidad_eleccion = 0;
@@ -31,67 +31,120 @@ int main(void) {
 
   srand(time(NULL));
 
+  int mul;
   int jopta = 0;
   while (1) {
-  kuera:
+  restart:
     nom = arrnom[(++jopta) & 1];
-    printf("Se generan aleatorios\n");
 
+    mul = 1;
     for (int j = 0; j < 5; ++j) {
       arr[j] = rand() % 6;
+      mul *= primos[arr[j]];
     }
 
     for (int pop = 0; pop < 3;) {
       printf("Lanza %s... (presiona enter)", nom);
-      ++pop;
       getchar();
-      qsort(arr, CANT, sizeof(int), cmp);
 
-      for (int kl = 0; kl < CANT; ++kl)
-        printf("%d ", 1 + arr[kl]);
-      putchar(10);
-
-      if (arr[0] == arr[1] && arr[1] == arr[2] && arr[2] == arr[3] &&
-          arr[3] == arr[4]) {
-        // ++gen;
-        printf("%s obtuvo Generala\n", nom);
-        goto kuera;
-      } else {
-        // printf("NO GENERALA\n");
-        // printf("a");
-
-        if ((arr[0] == arr[1] && arr[1] == arr[2] && arr[2] == arr[3]) ||
-            (arr[1] == arr[2] && arr[2] == arr[3] && arr[3] == arr[4])) {
-          // ++poker;
-          printf("%s obtuvo Poker\n", nom);
-          goto kuera;
-        } else {
-          // printf("NO POKER\n");
-          if ((arr[0] == arr[1] && arr[1] == arr[2] && arr[3] == arr[4]) ||
-              (arr[0] == arr[1] && arr[2] == arr[3] && arr[3] == arr[4])) {
-            // ++foul;
-            printf("%s obtuvo Faul\n", nom);
-            goto kuera;
-          } else {
-            // printf("NO FAUL\n");
-            cont = 0;
-            for (int aux = 0; aux < CANT - 1; ++aux) {
-              if (arr[aux] + 1 != arr[aux + 1]) {
-                cont = 1;
-                goto pop;
-              }
-            }
-          pop:
-            if (0 == cont) {
-              // ++escalera;
-              printf("%s obtuvo Escalera\n", nom);
-              goto kuera;
-            }
-          }
-        }
+      for (int i = 0; i < CANT; ++i) {
+        printf("%d ", arr[i]);
       }
-      if (++pop == 4)
-        goto kuera;
+      putchar(10);
+      ++pop;
+
+      switch (mul) {
+        // GENERALA
+      case 1:
+      case 32:
+      case 243:
+      case 3125:
+      case 16807:
+      case 161051:
+        printf("%s obtuvo generala!\n", nom);
+        goto restart;
+
+        // POKER:
+
+      case 16:
+      case 81:
+      case 625:
+      case 2401:
+      case 14641:
+      case 2:
+      case 162:
+      case 1250:
+      case 4802:
+      case 29282:
+      case 3:
+      case 48:
+      case 1875:
+      case 7203:
+      case 43923:
+      case 5:
+      case 80:
+      case 405:
+      case 12005:
+      case 73205:
+      case 7:
+      case 112:
+      case 567:
+      case 4375:
+      case 102487:
+      case 11:
+      case 176:
+      case 891:
+      case 6875:
+      case 26411:
+        printf("%s obtuvo poker!\n", nom);
+        goto restart;
+
+        // FAUL:
+
+      case 8:
+      case 27:
+      case 125:
+      case 343:
+      case 1331:
+      case 4:
+      case 108:
+      case 500:
+      case 1372:
+      case 5324:
+      case 9:
+      case 72:
+      case 1125:
+      case 3087:
+      case 11979:
+      case 25:
+      case 200:
+      case 675:
+      case 8575:
+      case 33275:
+      case 49:
+      case 392:
+      case 1323:
+      case 6125:
+      case 65219:
+      case 121:
+      case 968:
+      case 3267:
+      case 15125:
+      case 41503:
+        printf("%s obtuvo Faul!\n", nom);
+        goto restart;
+        /// ESCALERA:
+
+      case 210:
+      case 2310:
+        printf("%s obtuvo Escalera!\n", nom);
+        goto restart;
+      }
+
+      if (pop + 1 == 4) {
+        printf("No ha ganado nada, turno siguiente\n");
+        goto restart;
+      }
       printf("No has ganado nada, elige cuántos dados desea relanzar: ");
       if (!scanf("%d", &aux_cantidad_eleccion)) {
         printf("Improper input\n");
@@ -100,7 +153,6 @@ int main(void) {
 
       printf("Elige los dados que desea relanzar: \n");
       for (int y = 0; y < aux_cantidad_eleccion; ++y) {
-        // Reutilizando la variable cont
         printf("> ");
         if (!scanf(" %d", &aux_cherembito)) {
           printf("Improper input\n");
@@ -113,8 +165,17 @@ int main(void) {
         case 3:
         case 4:
         case 5:
-          arr[aux_cherembito - 1] = rand() & 6;
+          arr[aux_cherembito - 1] = rand() % 6;
         }
+      }
+      while (getchar() != '\n')
+        ;
+
+      fseek(stdin, -1, SEEK_CUR);
+
+      mul = 1;
+      for (int j = 0; j < 5; ++j) {
+        mul *= primos[arr[j]];
       }
     }
   }

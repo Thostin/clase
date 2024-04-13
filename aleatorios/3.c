@@ -1,3 +1,7 @@
+/*
+ * Si se lanzan 3 monedas al mismo tiempo, estimar la probabilidad de que las
+ * tres resulten "caras" o "cruces"
+ * */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

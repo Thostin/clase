@@ -1,3 +1,10 @@
+/*
+ * En cierto juego se lanzan dos dados y se registra la suma de los valores que
+ * resultan en cada uno de ellos. Escribir un algoritmo que simule P
+ * lanzamientos y elabore una tabla de frecuencias para los valores posibles de
+ * la suma (una tabla de frecuencias contiene cada valor posible y la cantidad
+ * de veces que el mismo se ha presentado).
+ * */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

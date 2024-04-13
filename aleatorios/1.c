@@ -1,3 +1,7 @@
+/*
+ * Simular 1000 lanzamientos de una moneda y registrar en cuántos lanzamientos
+ * se obtiene cara y en cuántos cruz.
+ * */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

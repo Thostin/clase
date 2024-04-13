@@ -1,3 +1,6 @@
+/**
+ * Este código es para generar parte de otro
+ * */
 #include <stdio.h>
 
 int ipow(int a, int b) {

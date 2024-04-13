@@ -1,3 +1,8 @@
+/*
+ * Simular N lanzamientos de una moneda y calcular la probabilidad de aparicion
+ * de una cara y de una cruz. Probar con $n \in {10, 100, 1000, 10000, 100000}$,
+ * verificar si la probabilidad se acerca a un valor fijo
+ * */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
