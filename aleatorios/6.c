@@ -48,7 +48,7 @@ int main(void) {
       getchar();
 
       for (int i = 0; i < CANT; ++i) {
-        printf("%d ", arr[i]);
+        printf("%d ", arr[i] + 1);
       }
       putchar(10);
       ++pop;
