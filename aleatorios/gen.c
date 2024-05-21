@@ -3,6 +3,7 @@
  * */
 #include <stdio.h>
 
+// ipow(2, 4) = 16
 int ipow(int a, int b) {
   int ret = a;
   for (int i = 1; i < b; ++i)
@@ -14,6 +15,11 @@ int main(void) {
   // Números primos, el 1 no es primo pero es útil que esté
   int arr[] = {1, 2, 3, 5, 7, 11};
 
+  /*
+  4 4 4 4 4
+  arr[dados];
+  */
+
   printf("//GENERALA:\n\n");
   printf("case %d: \n", ipow(arr[0], 5));
   printf("case %d: \n", ipow(arr[1], 5));
@@ -23,12 +29,14 @@ int main(void) {
   printf("case %d: \n", ipow(arr[5], 5));
 
   printf("\n//POKER:\n\n");
+
   for (int i = 0; i < 6; ++i) {
     for (int j = 0; j < 6; ++j) {
       if (i != j)
         printf("case %d: \n", arr[i] * ipow(arr[j], 4));
     }
   }
+
   /*
   printf("case %d: \n", arr[1] * ipow(arr[0], 4));
   printf("case %d: \n", arr[2] * ipow(arr[0], 4));

@@ -9,18 +9,18 @@
 typedef int type;
 
 int main(void) {
-  srand(time(NULL));
+  // srand(time(NULL));
   const type primos[] = {1, 2, 3, 5, 7, 11};
 
   unsigned res[4] = {0};
 
-  int lim;
-
-  printf("Ingrese el límite de la prueba: ");
-  if (!scanf("%d", &lim) || lim < 1) {
-    printf("Improper input\n");
-    return 1;
-  }
+  int lim = 5000000;
+  /*
+    printf("Ingrese el límite de la prueba: ");
+    if (!scanf("%d", &lim) || lim < 1) {
+      printf("Improper input\n");
+      return 1;
+    }*/
 
   // int mul;
   // int vec[5];
