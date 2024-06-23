@@ -2,6 +2,11 @@
  * I discovered that pressing 'f' in normal mode just crashes neovim
  * and make lose all my progress, nothing to do with the swap file...
  * almost an hour to trash*/
+
+/*
+ * Hacer un AHORCADO jajajjaj
+ * */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

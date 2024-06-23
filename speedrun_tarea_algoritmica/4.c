@@ -1,3 +1,7 @@
+/*
+ * Conjugar un verbo terminado en "ar" en tiempo presente
+ * */
+
 #include <stdio.h>
 #include <string.h>
 

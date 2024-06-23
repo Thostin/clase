@@ -1,3 +1,7 @@
+/*
+ * Obtener el diminutivo de cada nombre:
+ * Pedro -> Pedrito*/
+
 #include <stdio.h>
 #include <string.h>
 

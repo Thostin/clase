@@ -1,3 +1,9 @@
+/*
+ * Existen números que leídos de izquierda a derecha y de derecha a izquierda
+ * tienen el mismo valor. Ejemplos: 404, 111, 55, 323, 1045401.
+ * Lea un conjunto de números e imprima aquellos números leídos que tengan la
+ * característica antes mencionada*/
+
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>

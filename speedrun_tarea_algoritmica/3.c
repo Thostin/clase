@@ -1,3 +1,6 @@
+/*
+ * Verificar si un número es capicúa
+ * */
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>

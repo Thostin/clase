@@ -1,3 +1,6 @@
+/*
+ * Ordenar alfabéticamente una lista de palabras
+ * */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
