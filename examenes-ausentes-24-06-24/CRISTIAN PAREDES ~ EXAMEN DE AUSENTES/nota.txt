@@ -1,0 +1,4 @@
+cp:
+* puso i en vez de j.
+* No muestra el puntaje de cada alumno en cada tarea.
+* 
