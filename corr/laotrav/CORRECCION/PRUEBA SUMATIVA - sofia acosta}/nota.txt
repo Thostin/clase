@@ -1,0 +1,22 @@
+Nota 1: guardó en un directorio '.vscode', y casi no encuentro su examen.
+
+La función puntos(int); no chequea todos los posibles valores que se pasa 
+a la misma, rompiendo la compu en caso contrario.
+
+Línea 25: Lee una variable pero en genius y funciona.
+
+Funciona, usa un 
+$$i_d \in {1, ..., cant_cl}$$
+para cada cliente en lugar de su nombre.
+
+FUNCIONA
+
+
+
+Código 2:
+Creo que funciona.
+Pero tiene una terrible falla: el arreglo que almacena la cantidad de veces
+que apareció cada suma es inicializado a cero cada vez que se tiran los dados,
+por ende tanto tirar los dados no sirve de nada; se puede solucionar si se
+saca ese bucle afuera. También, el algoritmo que halla el mayor no tiene sentido, 
+halla el último elemento que es mayor que el siguiente.

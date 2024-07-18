@@ -1,0 +1,46 @@
+Bruno: 
+
+Ejercicio 1:
+
+Se olvidó de imprimir número de cliente, puso el %d pero no el ', i'
+Imprime /n en luagar de \n.
+Crashea si excribís mal.
+No gestiona los préstamos.
+
+Nota final: se rindió.
+Q. E. D.
+
+
+Ejercicio 2:
+
+No voy a ejecutar, es una ruleta rusa, no se da un valor a los
+dados en ningún momento, y se accede a un arreglo con ese valor,
+esto rompe la compu.
+
+INFORME DE COMPILADOR:
+
+EJERCICIO_2_BRUNO_BERNAL.c: In function ‘main’:
+EJERCICIO_2_BRUNO_BERNAL.c:36:9: error: ‘dado1’ may be used uninitialized [-Werror=maybe-uninitialized]
+   36 |         lanzar_dado(dado1);
+      |         ^~~~~~~~~~~~~~~~~~
+EJERCICIO_2_BRUNO_BERNAL.c:29:9: note: ‘dado1’ was declared here
+   29 |     int dado1, dado2, dado3, suma_dado[16], triples = 0, escaleras = 0;
+      |         ^~~~~
+EJERCICIO_2_BRUNO_BERNAL.c:37:9: error: ‘dado2’ may be used uninitialized [-Werror=maybe-uninitialized]
+   37 |         lanzar_dado(dado2);
+      |         ^~~~~~~~~~~~~~~~~~
+EJERCICIO_2_BRUNO_BERNAL.c:29:16: note: ‘dado2’ was declared here
+   29 |     int dado1, dado2, dado3, suma_dado[16], triples = 0, escaleras = 0;
+      |                ^~~~~
+EJERCICIO_2_BRUNO_BERNAL.c:38:9: error: ‘dado3’ may be used uninitialized [-Werror=maybe-uninitialized]
+   38 |         lanzar_dado(dado3);      // Lanza dados.
+      |         ^~~~~~~~~~~~~~~~~~
+EJERCICIO_2_BRUNO_BERNAL.c:29:23: note: ‘dado3’ was declared here
+   29 |     int dado1, dado2, dado3, suma_dado[16], triples = 0, escaleras = 0;
+
+La función lanzar_dado(int); no hace nada, no pasa por puntero, y por ende no cambia el valor.
+La función lanzar_dado(int); no hace nada, no pasa por puntero, y por ende no cambia el valor.
+
+
+La librería time.h no se usa.
+Nota final: ningún valor se modifica y por ende no pasa nada, y se imprime macanada.
