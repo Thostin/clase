@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define COMPILE_STRING "gcc -o p -Wall -Werror -Wpedantic -Wextra "
+#define COMPILE_STRING "gcc -o p -Wall -Werror -Wpedantic -Wextra func.c "
 
 int main(int argc, char *argv[]) {
   if (2 != argc) {
