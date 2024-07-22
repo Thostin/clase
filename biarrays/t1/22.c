@@ -1,5 +1,4 @@
 #include "func.h"
-#include <stdio.h>
 
 /*
  * Es de esos problemas que requieren de funciones recursivas
@@ -26,7 +25,7 @@ unsigned current_steps = 2000000000;
 
 void rellenar_mod_2(type_map *arr, int f_c) {
   for (int i = 0; i < f_c; ++i) {
-    arr[i] = rand() % 8 <= 2 ? 1 : 0;
+    arr[i] = rand() % 3 == 0 ? 1 : 0;
   }
 }
 
@@ -181,7 +180,6 @@ void mostrar_matriz_con_ceros(int *mat, int f, int c) {
   putchar(10);
 }
 
-#define TIME_SPAN 100000
 /* No sé cómo, pero esta función salió a la primera que fachaaaaa
  * */
 void mostrar_matriz_animada(int *mat, int f, int c) {
@@ -288,6 +286,7 @@ int _main(void) {
     int pos_f = 0, pos_c = 0;
     mostrar_matriz_animada(lab, f, c);
 
+#define TIME_SPAN 400000
     mostrar_matriz_sin_ceros(lab, f, c);
     usleep(TIME_SPAN);
 
