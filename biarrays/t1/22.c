@@ -25,7 +25,7 @@ unsigned current_steps = 2000000000;
 
 void rellenar_mod_2(type_map *arr, int f_c) {
   for (int i = 0; i < f_c; ++i) {
-    arr[i] = rand() % 3 == 0 ? 1 : 0;
+    arr[i] = rand() % 8 <= 2 ? 1 : 0;
   }
 }
 
@@ -236,10 +236,12 @@ int _main(void) {
 
   f = filas;
   c = columnas;
-  type_map lab[f * c];
+  type_map *lab = malloc(sizeof(type_map) * f * c);
+  // type_map lab[f * c];
 
   // Aquí se guardarán las posiciones en las que el personaje ya ha estado
-  type_steps pos_buf[f * c];
+  // type_steps pos_buf[f * c];
+  type_steps *pos_buf = malloc(sizeof(type_steps) * f * c);
   __builtin_memset(pos_buf, 255, f * c * sizeof(type_steps));
   positions = pos_buf;
   lab_access_func = lab;
@@ -286,12 +288,10 @@ int _main(void) {
     int pos_f = 0, pos_c = 0;
     mostrar_matriz_animada(lab, f, c);
 
-#define TIME_SPAN 400000
+#define TIME_SPAN 100000
     mostrar_matriz_sin_ceros(lab, f, c);
     usleep(TIME_SPAN);
-
     for (i = 0; i < current_steps; ++i) {
-      // printf("%s ", mensajes[moves[i]]);
       lab[pos_f * c + pos_c] = 0;
       switch (moves[i]) {
       case 0:
@@ -316,6 +316,7 @@ int _main(void) {
         putchar(10);
       usleep(TIME_SPAN);
     }
+
   } else
     printf("No se pudo :(");
   putc(10, stdout);
