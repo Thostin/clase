@@ -220,13 +220,13 @@ void mostrar_matriz_animada(int *mat, int f, int c) {
     usleep(60000);
     system("clear");
   }
-
   // putchar(10);
 }
 
 int _main(void) {
   srand(time(nullptr));
   int filas, columnas;
+  // int * x = &filas;
 
   system("clear");
   printf("Ingrese las dimensiones de la matriz de f * c:\nf> ");
