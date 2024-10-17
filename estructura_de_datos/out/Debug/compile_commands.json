@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/thotstin/clase/estructura_de_datos/out/Debug",
+  "command": "/usr/bin/cc  -I/home/thotstin/clase/estructura_de_datos/include -g -std=gnu17 -o CMakeFiles/todo.dir/func_guardar.c.o -c /home/thotstin/clase/estructura_de_datos/func_guardar.c",
+  "file": "/home/thotstin/clase/estructura_de_datos/func_guardar.c",
+  "output": "CMakeFiles/todo.dir/func_guardar.c.o"
+},
+{
+  "directory": "/home/thotstin/clase/estructura_de_datos/out/Debug",
+  "command": "/usr/bin/cc  -I/home/thotstin/clase/estructura_de_datos/include -g -std=gnu17 -o CMakeFiles/todo.dir/dec_structs.c.o -c /home/thotstin/clase/estructura_de_datos/dec_structs.c",
+  "file": "/home/thotstin/clase/estructura_de_datos/dec_structs.c",
+  "output": "CMakeFiles/todo.dir/dec_structs.c.o"
+},
+{
+  "directory": "/home/thotstin/clase/estructura_de_datos/out/Debug",
+  "command": "/usr/bin/cc  -I/home/thotstin/clase/estructura_de_datos/include -g -std=gnu17 -o CMakeFiles/todo.dir/nombres_constantes.c.o -c /home/thotstin/clase/estructura_de_datos/nombres_constantes.c",
+  "file": "/home/thotstin/clase/estructura_de_datos/nombres_constantes.c",
+  "output": "CMakeFiles/todo.dir/nombres_constantes.c.o"
+}
+]

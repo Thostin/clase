@@ -1,0 +1,47 @@
+const char *editoriales[] = {"azeta", "goya", "atlas", "alianza", "el lector"};
+
+const char *generos_cine[] = {"Terror",          "Acción",
+                              "Ciencia Ficción", "Suspenso",
+
+                              "Biblia",          "Didácticos"};
+const char *marcas_autos[] = {
+    "Chevrolet",   "Toyota",        "Audi",    "Ferrari", "BMW",
+    "Volkswagen",  "Nissan",        "Bugatti", "Jeep",    "Ford",
+    "Lamborghini", "Mercedes Benz", "Pagani",  "Tesla",   "Italdesign",
+    "De Tomaso",   "McLaren",       "Ensalada"};
+
+const char *generos_musica[] = {"Pop",
+                                "Rap",
+                                "Rock",
+                                "Reggae",
+                                "Reggaeton",
+                                "Música aleatoria",
+                                "Clásica",
+                                "Jazz",
+                                "Blues",
+                                "R&B",
+                                "Soul",
+                                "Gospel",
+                                "Salsa",
+                                "Merengue",
+                                "Latina",
+                                "Valletano",
+                                "Trap",
+                                "Drill",
+                                "Rock progresivo",
+                                "Trash metal",
+                                "Metal",
+                                "Black metal",
+                                "House",
+                                "Ambiental",
+                                "Rock Latino",
+                                "Polca Chilena",
+                                "Polca paraguaya",
+                                "Guarania",
+                                "Funk",
+                                "Phonk",
+                                "Electrónica",
+                                "Dubstep",
+                                "Lofi",
+                                "Chamamé",
+                                "Tango"};

@@ -1,0 +1,17 @@
+/*
+ * P1)
+ * Dada una matriz de caracteres de tamaño N * N,
+ * escribir un programa que busque una palara
+ * específica ingresada por el usuario en la matriz,
+ * ya sea en forma horizontal o en forma vertical.
+ *
+ * P2)
+ * Implementa un programa que cree una matriz de N * N,
+ * que contenga cadenas de texto. Luego, solicita al
+ * usuario una palabra y que la reemplace en todas las
+ * posiciones donde se encuentre en la matriz por una
+ * nueva palabra.
+ * */
+#include <stdio.h>
+
+int main(void) { return 0; }

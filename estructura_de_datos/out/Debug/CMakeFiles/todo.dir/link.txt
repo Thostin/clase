@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/todo.dir/func_guardar.c.o CMakeFiles/todo.dir/dec_structs.c.o CMakeFiles/todo.dir/nombres_constantes.c.o -o todo 

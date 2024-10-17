@@ -1,11 +1,18 @@
 #include "func.h"
 #include <stdio.h>
 
+// Only for system("clear")
+#include <stdlib.h>
+
 /* lim: límite de carcateres (excluyendo el '\0') */
 
 void leer_datos(void) {
+  system("clear");
   int cod_emp, sexo, dat[10], res_sueldo, sueldo;
   __builtin_memset(dat, 0, 40);
+  printf("Código de empleado: (0, infinity) and not equal 9999\n"
+         "Sexo: 1 o 2\n"
+         "Sueldo: (0, 15000)\n\n");
   while (1) {
     printf("Código de empleado: ");
     if (1 != scanf(" %d", &cod_emp) || cod_emp <= 0 || cod_emp == 9999)

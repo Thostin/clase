@@ -1,0 +1,3 @@
+/home/thotstin/clase/estructura_de_datos/out/Debug/CMakeFiles/todo.dir
+/home/thotstin/clase/estructura_de_datos/out/Debug/CMakeFiles/edit_cache.dir
+/home/thotstin/clase/estructura_de_datos/out/Debug/CMakeFiles/rebuild_cache.dir
