@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="759.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.karaikacho.farmaciatm.FacturaController">
+    <children>
+        <Pane fx:id="factura" layoutX="7.0" layoutY="9.0" prefHeight="134.0" prefWidth="739.0" style="-fx-background-color: #ffff00;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <children>
+                <Button fx:id="btnAgregar" layoutX="637.0" layoutY="97.0" mnemonicParsing="false" onAction="#agregarFila" text="Agregar" />
+                <DatePicker fx:id="fecha" editable="false" layoutX="514.0" layoutY="16.0" promptText="Fecha" />
+                <TextField fx:id="txtCantidad" layoutX="514.0" layoutY="60.0" prefHeight="26.0" prefWidth="190.0" promptText="Cantidad" />
+                <Button fx:id="btnBuscarCliente" layoutX="375.0" layoutY="16.0" mnemonicParsing="false" onAction="#buscarCliente" prefHeight="26.0" prefWidth="42.0" text="..." />
+                <Button fx:id="btnBuscarProducto" layoutX="375.0" layoutY="60.0" mnemonicParsing="false" onAction="#buscarProducto" prefHeight="26.0" prefWidth="42.0" text="..." />
+                <TextField fx:id="txtCliente" editable="false" layoutX="195.0" layoutY="16.0" promptText="Cliente" />
+                <TextField fx:id="txtProducto" editable="false" layoutX="195.0" layoutY="60.0" promptText="Productos" />
+                <TextField fx:id="txtFact" editable="false" layoutX="90.0" layoutY="16.0" prefHeight="26.0" prefWidth="88.0" />
+                <Label layoutX="6.0" layoutY="20.0" text="Nro. Factura:" />
+            <ComboBox fx:id="cmbMetodo" layoutX="6.0" layoutY="60.0" prefHeight="26.0" prefWidth="172.0" promptText="Metodo de pago" />
+            </children>
+        </Pane>
+        <Pane layoutX="10.0" layoutY="154.0" prefHeight="287.0" prefWidth="739.0" style="-fx-background-color: #000000;" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <children>
+                <Pane layoutX="-1.0" layoutY="300.0" prefHeight="57.0" prefWidth="464.0" style="-fx-background-color: #ffff00;">
+                    <children>
+                        <Button fx:id="btnNuevo" layoutX="23.0" layoutY="16.0" mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
+                        <Button fx:id="btnGrabar" disable="true" layoutX="101.0" layoutY="16.0" mnemonicParsing="false" onAction="#grabar" text="Grabar" />
+                        <Button fx:id="btnCancelar" layoutX="184.0" layoutY="16.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+                        <Button fx:id="btnImprimir" disable="true" layoutX="275.0" layoutY="16.0" mnemonicParsing="false" onAction="#imprimir" text="Imprimir" />
+                    </children>
+                </Pane>
+                <TableView fx:id="tablaDetalle" layoutX="4.0" layoutY="4.0" prefHeight="278.0" prefWidth="731.0">
+                    <columns>
+                        <TableColumn fx:id="colCodigo" prefWidth="96.0" text="Codigo" />
+                        <TableColumn fx:id="colDescripcion" minWidth="0.0" prefWidth="263.0" text="Descripcion" />
+                        <TableColumn fx:id="colPrecio" prefWidth="119.0" text="Precio" />
+                        <TableColumn fx:id="colCantidad" prefWidth="122.0" text="Cantidad" />
+                        <TableColumn fx:id="colSubTotal" prefWidth="116.0" text="SubTotal" />
+                    </columns>
+                </TableView>
+            </children>
+        </Pane>
+        <Label layoutX="503.0" layoutY="457.0" text="Total:" />
+      <TextField fx:id="txtTotal" disable="true" layoutX="548.0" layoutY="453.0" />
+    </children>
+</AnchorPane>
