@@ -1,0 +1,13 @@
+select * from emp;
+select Apellido, Oficio, Salario from emp where Comision>100000;
+select * from emp order by dept_Dept_No asc, Oficio asc;
+select * from sala where Hospital_Cod=45;
+select * from enfermo where Fecha_Nac < "1970-01-01 00:00:00";
+select * from enfermo where Fecha_Nac < "1970-01-01 00:00:00" order by Inscripcion desc;
+select * from plantilla where T="M";
+select * from plantilla where T="N";
+select * from emp where Emp_No in (select Empleado_No from plantilla where T="M") and Salario between 200000 and 225000;
+select * from emp where not Fecha_Alt between "1980-01-01 00:00:00" and "1982-12-12 00:00:00";
+select * from dept where Loc in ("BARCElONA", "MADRID");
+select * from emp where Apellido LIKE '%z' order by dept_Dept_No, Fecha_Alt;
+select distinct Nombre from sala;
