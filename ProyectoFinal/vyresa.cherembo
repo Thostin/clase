@@ -1,0 +1,28 @@
+Este documento recopila una cuantas macanadas que
+se me ocurren para añadir al documento de presentación
+del proyecto final:
+
+Recalco que la entrevista fue... regular. Las
+personas a las que debíamos entrevistar estaban muy
+ocupadas y no se encontraban abiertas a discutir
+posibilidades para desarrollar un proyecto.
+
+En síntesis se decubrió que el problema es el acceso
+a los datos, que saber algún dato acerca de algún
+funcionario es muy lento, ya que se debe buscar entre 
+archivos físicos.
+
+La propuesta es hacer un software sencillo por medio del 
+cual se puedan cargar, modificar y consultar dichos datos 
+rápidamente, nada más.
+
+Los datos son los siguientes:
+- Datos ensenciales (nombres y apellidos, ci, etc).
+- Carga horaria de los profesores.
+
+La carga horaria consiste en:
+- En qué horarios se encuentra en el colegio.
+- En qué parte del colegio se ubica.
+
+A inicio de año se cargan datos los cuales se consultan 
+a lo largo del mismo.
